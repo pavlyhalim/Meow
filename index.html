@@ -118,22 +118,63 @@ img:hover {
 <audio id="audio10" src="CommsLab Recordings/cat4_1.WAV"></audio>
 
 <script>
+var ids1 =  ["audio1", "audio2", "audio3", "audio4", "audio5"];
+var ids2 =  ["audio6", "audio7"];
+var ids3 =  ["audio8", "audio9"];
+var ids4 =  ["audio10"];
+var ids1index = 0;
+var ids2index = 0;
+var ids3index = 0;
+var ids4index = 0;
+// function to play different audio files when image1 is clicked
 function playAudio(id) {
-var audio = document.getElementById(id);
-audio.play();
+    
+    var ctr = 0;
+    
+    if (id == "audio1") {
+        if (ids1index < ids1.length) {
+        var audio = document.getElementById(ids1[ids1index]);
+        audio.play();
+            ids1index++;
+            if (ids1index == ids1.length) {
+                ids1index = 0;
+            }
+        }
+        
+    }
+    if (id == "audio6") {
+        if (ids2index < ids2.length) {
+        var audio = document.getElementById(ids2[ids2index]);
+        audio.play();
+            ids2index++;
+            if (ids2index == ids2.length) {
+                ids2index = 0;
+            }
+        }
+    }
+    if (id == "audio8") {
+        if (ids3index <= ids3.length) {
+        var audio = document.getElementById(ids3[ids3index]);
+        audio.play();
+            ids3index++;
+            if (ids3index == ids3.length) {
+                ids3index = 0;
+            }
+        }
+    }
+    if (id == "audio10") {
+        if (ids4index <= ids4.length) {
+        var audio = document.getElementById(ids4[ids4index]);
+        audio.play();
+            ids4index++;
+            if (ids4index == ids4.length) {
+                ids4index = 0;
+            }
+        }
+    }
 }
-// pause all audio when user click on any image 
-function pauseAudio() {
-var audio = document.getElementsByTagName("audio");
-for(var i = 0, len = audio.length; i < len;i++) {
-audio[i].pause();
-}
-}
-// play different audio when user click on the same image again
-function playAudioAgain(id) {
-var audio = document.getElementById(id);
-audio.play();
-}
+
+
 
 //make all images clickable 
 var images = document.getElementsByClassName('img');
