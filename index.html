@@ -22,7 +22,6 @@ img:hover {
   width: 50%;
 }
 
-
 #img1 {
     position: fixed;
     left: 0%;
@@ -31,7 +30,7 @@ img:hover {
     bottom: 50%;
     width: 100%;
     height: 100%;
-    background-color: #DEF5E5;
+    background-color: #2D3142;
     z-index: 1;
     display: block;
     margin: 0 auto;
@@ -45,7 +44,7 @@ img:hover {
     bottom: 50%;
     width: 100%;
     height: 100%;
-    background-color: #BCEAD5;
+    background-color: #BFC0C0;
     z-index: 1;
     /* text-align: center; */
 }
@@ -57,7 +56,7 @@ img:hover {
     bottom: 0%;
     width: 100%;
     height: 100%;
-    background-color: #9ED5C5;
+    background-color: #EF8354;
     z-index: 1;
     /* text-align: center; */
 
@@ -70,27 +69,62 @@ img:hover {
     bottom: 0%;
     width: 100%;
     height: 100%;
-    background-color: #8EC3B0;
+    background-color: #4F5D75;
     z-index: 1;
     /* text-align: center; */
 }
-.header {
-        background-color: #000;
-        color: #fff;
-        padding: 20px 0;
-    }
+
+
+.alert {
+  padding: 50px;
+  margin: 100px;
+  top: 25%;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  z-index: 2;
+  position: fixed;
+  font: 30px sans-serif;
+}
+
+.alert.success {
+background-color: #04AA6D;
+z-index: 2;
+position: fixed;
+}
+
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
 
 
 </style>
 </head>
 <body>
 
-    <!-- create header with instructions -->
 <div id = "center">
 <div id="container">
-    <header class="header">
-        <h1>IM - CommLab</h1>
-    </header>
+  
+  <div class="alert success">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <strong>Hello Cat Petter!</strong> “You stay with the cats all the time, but do you know what they’re talking about you behind your back? Let’s find out!”
+      Pet(Click) each of the cats to listen what secret conversation they’re having
+      (Don’t stop at one!!!)
+    </div>
+  
 <div id="img1" class="center" onclick="playAudio('audio1')"> 
 <img src="cat1.PNG" alt="img1" width="464px" height="1085px" /> 
 </div>
