@@ -1,0 +1,155 @@
+<!-- build a page with 4 placeholders for images and highlight the image and start voice when user click on it using js -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title> ca</title>
+<style>
+
+/* apply hover class for all images */
+img:hover {
+  /* zoom in effect */
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#img1 {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 50%;
+    bottom: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: #FF0000;
+    z-index: 1;
+    display: block;
+    margin: 0 auto;
+
+}
+#img2 {
+    position: fixed;
+    left: 50%;
+    top: 0%;
+    right: 0%;
+    bottom: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: #00FF00;
+    z-index: 1;
+    /* text-align: center; */
+}
+#img3 {
+    position: fixed;
+    left: 0%;
+    top: 50%;
+    right: 50%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #0000FF;
+    z-index: 1;
+    /* text-align: center; */
+
+}
+#img4 {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFF00;
+    z-index: 1;
+    /* text-align: center; */
+}
+
+.header {
+        background-color: #000;
+        color: #fff;
+        padding: 20px 0;
+    }
+
+
+</style>
+</head>
+<body>
+
+    <!-- create header with instructions -->
+<div id = "center">
+<div id="container">
+    <header class="header">
+        <h1>IM - CommLab</h1>
+    </header>
+<div id="img1" class="center" onclick="playAudio('audio1')">
+<img src="cat1.PNG" alt="img1" width="464px" height="1085px" /> 
+</div>
+<div id="img2" class="center" onclick="playAudio('audio2')">
+<img src="cat2.PNG" alt="img2" width="620px" height="613px" />
+</div>
+<div id="img3" class="center" onclick="playAudio('audio3')">
+<img src="cat3.PNG" alt="img3" width="266px" height="700px" />
+</div>
+<div id="img4" class="center" onclick="playAudio('audio4')">
+<img src="cat4.PNG" alt="img4" width="433px" height="523px" />
+</div>
+</div>
+</div>
+
+<audio id="audio1" src="audio1.mp3"></audio>
+<audio id="audio2" src="audio2.mp3"></audio>
+<audio id="audio3" src="audio3.mp3"></audio>
+<audio id="audio4" src="audio4.mp3"></audio>
+
+<script>
+function playAudio(id) {
+var audio = document.getElementById(id);
+audio.play();
+}
+// pause all audio when user click on any image 
+function pauseAudio() {
+var audio = document.getElementsByTagName("audio");
+for(var i = 0, len = audio.length; i < len;i++) {
+audio[i].pause();
+}
+}
+// play different audio when user click on the same image again
+function playAudioAgain(id) {
+var audio = document.getElementById(id);
+audio.play();
+}
+
+//make all images clickable 
+var images = document.getElementsByClassName('img');
+for(var i = 0; i < images.length; i++) {
+images[i].onclick = function() {
+pauseAudio();
+playAudioAgain(this.id);
+}
+}
+
+//make the image move when user hover on it 
+var images = document.getElementsByClassName('img');
+for(var i = 0; i < images.length; i++) {
+images[i].onmouseover = function() {
+this.style.transform = "scale(1.2)";
+}
+images[i].onmouseout = function() {
+this.style.transform = "scale(1)";
+}
+}
+
+</script>
+</body>
+</html>
