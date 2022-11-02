@@ -91,25 +91,31 @@ img:hover {
     <header class="header">
         <h1>IM - CommLab</h1>
     </header>
-<div id="img1" class="center" onclick="playAudio('audio1')">
+<div id="img1" class="center" onclick="playAudio('audio1')"> 
 <img src="cat1.PNG" alt="img1" width="464px" height="1085px" /> 
 </div>
-<div id="img2" class="center" onclick="playAudio('audio2')">
+<div id="img2" class="center" onclick="playAudio('audio6')">
 <img src="cat2.PNG" alt="img2" width="620px" height="613px" />
 </div>
-<div id="img3" class="center" onclick="playAudio('audio3')">
+<div id="img3" class="center" onclick="playAudio('audio8')">
 <img src="cat3.PNG" alt="img3" width="266px" height="700px" />
 </div>
-<div id="img4" class="center" onclick="playAudio('audio4')">
+<div id="img4" class="center" onclick="playAudio('audio10')">
 <img src="cat4.PNG" alt="img4" width="433px" height="523px" />
 </div>
 </div>
 </div>
 
-<audio id="audio1" src="audio1.mp3"></audio>
-<audio id="audio2" src="audio2.mp3"></audio>
-<audio id="audio3" src="audio3.mp3"></audio>
-<audio id="audio4" src="audio4.mp3"></audio>
+<audio id="audio1" src="CommsLab Recordings/cat1_1.WAV"></audio>
+<audio id="audio2" src="CommsLab Recordings/cat1_2.WAV"></audio>
+<audio id="audio3" src="CommsLab Recordings/cat1_3.WAV"></audio>
+<audio id="audio4" src="CommsLab Recordings/cat1_4.WAV"></audio>
+<audio id="audio5" src="CommsLab Recordings/cat1_5.WAV"></audio>
+<audio id="audio6" src="CommsLab Recordings/cat2_1.WAV"></audio>
+<audio id="audio7" src="CommsLab Recordings/cat2_2.WAV"></audio>
+<audio id="audio8" src="CommsLab Recordings/cat3_1.WAV"></audio>
+<audio id="audio9" src="CommsLab Recordings/cat3_2.WAV"></audio>
+<audio id="audio10" src="CommsLab Recordings/cat4_1.WAV"></audio>
 
 <script>
 function playAudio(id) {
@@ -135,9 +141,12 @@ for(var i = 0; i < images.length; i++) {
 images[i].onclick = function() {
 pauseAudio();
 playAudioAgain(this.id);
+//ondoubleclick play different audio
+this.ondblclick = function() {
+pauseAudio();
 }
 }
-
+}
 //make the image move when user hover on it 
 var images = document.getElementsByClassName('img');
 for(var i = 0; i < images.length; i++) {
@@ -147,6 +156,9 @@ this.style.transform = "scale(1.2)";
 images[i].onmouseout = function() {
 this.style.transform = "scale(1)";
 }
+
+
+
 }
 
 </script>
