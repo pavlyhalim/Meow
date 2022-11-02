@@ -10,9 +10,9 @@ The story unfolds like this: One cat is complaining about humans, and the others
 Our group splitted all the work among themselves. Here's how:
 
 1. Raya: Writing the script for cats' dialogues, recording audio, documentation
-2. Marwan 
-3. Vir
-4. Pavly
+2. Marwan: Idea implementation, coding for the website
+3. Vir: Recording audio
+4. Pavly: Idea implementation, coding for the website
 
 ## Reflection:
 
