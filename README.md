@@ -9,12 +9,12 @@ The story unfolds like this: One cat is complaining about humans, and the others
 
 Our group splitted all the work among themselves. Here's how:
 
-1. Raya wrote the script for the cat's dialogues and recorded sound for it
+1. Raya: Writing the script for cats' dialogues, recording audio, documentation
 2. Marwan 
 3. Vir
 4. Pavly
 
 ## Reflection:
 
-Our final outcome
+Our final outcome quiet resembled to what we had initially planned. Putting the sound on sequentially on the cats was the hardest part to do, but that was the most important part for the user interactive interface. All the sounds that we used were originally recorded by us using the equipment center's instruments. Overall, the flow of the story is the hero of our project I guess :)
 
