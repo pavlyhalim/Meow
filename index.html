@@ -124,95 +124,196 @@ position: fixed;
       Pet(Click) each of the cats to listen what secret conversation they’re having
       (Don’t stop at one!!!)
     <br>
-        Note:  <strong>100% Original!</strong> The conversation starts from left to right...!
+        Note: 100% Original! The conversation  <strong> starts from top left</strong>...!
     </div>
     </div>
   
-<div id="img1" class="center" onclick="playAudio('audio1')"> 
+<div id="img1" class="center" onclick="conunt()"> 
 <img src="cat1.PNG" alt="img1" width="464px" height="1085px" /> 
 </div>
-<div id="img2" class="center" onclick="playAudio('audio6')">
+<div id="img2" class="center" onclick="conunt()">
 <img src="cat2.PNG" alt="img2" width="620px" height="613px" />
 </div>
-<div id="img3" class="center" onclick="playAudio('audio8')">
+<div id="img3" class="center" onclick="conunt()">
 <img src="cat3.PNG" alt="img3" width="266px" height="700px" />
 </div>
-<div id="img4" class="center" onclick="playAudio('audio10')">
+<div id="img4" class="center" onclick="conunt()">
 <img src="cat4.PNG" alt="img4" width="433px" height="523px" />
 </div>
 </div>
 </div>
 
-<audio id="audio1" src="CommsLab Recordings/cat1_1.WAV"></audio>
-<audio id="audio2" src="CommsLab Recordings/cat1_2.WAV"></audio>
-<audio id="audio3" src="CommsLab Recordings/cat1_3.WAV"></audio>
-<audio id="audio4" src="CommsLab Recordings/cat1_4.WAV"></audio>
-<audio id="audio5" src="CommsLab Recordings/cat1_5.WAV"></audio>
-<audio id="audio6" src="CommsLab Recordings/cat2_1.WAV"></audio>
-<audio id="audio7" src="CommsLab Recordings/cat2_2.WAV"></audio>
-<audio id="audio8" src="CommsLab Recordings/cat3_1.WAV"></audio>
-<audio id="audio9" src="CommsLab Recordings/cat3_2.WAV"></audio>
-<audio id="audio10" src="CommsLab Recordings/cat4_1.WAV"></audio>
+<audio id="audio1" src="CommsLab Recordings/cat1_1.WAV" onended =  "check(ctr);"></audio>
+<audio id="audio2" src="CommsLab Recordings/cat1_2.WAV" onended =  "check(ctr);"></audio>
+<audio id="audio3" src="CommsLab Recordings/cat1_3.WAV" onended =  "check(ctr);"></audio>
+<audio id="audio4" src="CommsLab Recordings/cat1_4.WAV" onended =  "check(ctr);"></audio>
+<audio id="audio5" src="CommsLab Recordings/cat1_5.WAV" onended =  "check(ctr);"></audio>
+<audio id="audio6" src="CommsLab Recordings/cat2_1.WAV" onended =  "check(ctr);"></audio>
+<audio id="audio7" src="CommsLab Recordings/cat2_2.WAV" onended =  "check(ctr);"></audio>
+<audio id="audio8" src="CommsLab Recordings/cat3_1.WAV" onended =  "check(ctr);"></audio>
+<audio id="audio9" src="CommsLab Recordings/cat3_2.WAV" onended =  "check(ctr);"></audio>
+<audio id="audio10" src="CommsLab Recordings/cat4_1.WAV" onended =  "check(ctr);"></audio>
 
 <script>
-var ids1 =  ["audio1", "audio2", "audio3", "audio4", "audio5"];
-var ids2 =  ["audio6", "audio7"];
-var ids3 =  ["audio8", "audio9"];
-var ids4 =  ["audio10"];
-var ids1index = 0;
-var ids2index = 0;
-var ids3index = 0;
-var ids4index = 0;
-// function to play different audio files when image1 is clicked
-function playAudio(id) {
-    
-    var ctr = 0;
-    
-    if (id == "audio1") {
-        if (ids1index < ids1.length) {
-        var audio = document.getElementById(ids1[ids1index]);
-        audio.play();
-            ids1index++;
-            if (ids1index == ids1.length) {
-                ids1index = 0;
-            }
-        }
-        
+var ctr =1;
+var id;
+var img1 = document.getElementById("img1");
+var img2 = document.getElementById("img2");
+var img3 = document.getElementById("img3");
+var img4 = document.getElementById("img4");
+function playAudio(){
+  var x = document.getElementById(id);
+  ctr++;
+  x.play();
+
+}
+function conunt(){
+if (ctr==1){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio1";
+    } 
+    else if (ctr==2){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'visible';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio6";
     }
-    if (id == "audio6") {
-        if (ids2index < ids2.length) {
-        var audio = document.getElementById(ids2[ids2index]);
-        audio.play();
-            ids2index++;
-            if (ids2index == ids2.length) {
-                ids2index = 0;
-            }
-        }
+    else if (ctr==3){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio2";
     }
-    if (id == "audio8") {
-        if (ids3index <= ids3.length) {
-        var audio = document.getElementById(ids3[ids3index]);
-        audio.play();
-            ids3index++;
-            if (ids3index == ids3.length) {
-                ids3index = 0;
-            }
-        }
+    else if (ctr==4){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'visible';
+        img4.style.visibility = 'hidden';
+        id = "audio8";
     }
-    if (id == "audio10") {
-        if (ids4index <= ids4.length) {
-        var audio = document.getElementById(ids4[ids4index]);
-        audio.play();
-            ids4index++;
-            if (ids4index == ids4.length) {
-                ids4index = 0;
-            }
-        }
+    else if (ctr==5){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio3";
+    }
+    else if (ctr==6){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'visible';
+        id = "audio10";
+    }
+    else if (ctr==7){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'visible';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio7";
+    }
+    else if (ctr==8){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio4";
+    }
+    else if (ctr==9){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'visible';
+        img4.style.visibility = 'hidden';
+        id = "audio9";
+    }
+    else if (ctr==10){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio5";
+    }
+    playAudio();
+   
+   
+}
+function check (ctr){
+    if (ctr==1){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio1";
+    } 
+    else if (ctr==2){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'visible';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio6";
+    }
+    else if (ctr==3){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio2";
+    }
+    else if (ctr==4){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'visible';
+        img4.style.visibility = 'hidden';
+        id = "audio8";
+    }
+    else if (ctr==5){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio3";
+    }
+    else if (ctr==6){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'visible';
+        id = "audio10";
+    }
+    else if (ctr==7){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'visible';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio7";
+    }
+    else if (ctr==8){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio4";
+    }
+    else if (ctr==9){
+        img1.style.visibility = 'hidden';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'visible';
+        img4.style.visibility = 'hidden';
+        id = "audio9";
+    }
+    else if (ctr==10){
+        img1.style.visibility = 'visible';
+        img2.style.visibility = 'hidden';
+        img3.style.visibility = 'hidden';
+        img4.style.visibility = 'hidden';
+        id = "audio5";
     }
 }
-
-
-
 //make all images clickable 
 var images = document.getElementsByClassName('img');
 for(var i = 0; i < images.length; i++) {
